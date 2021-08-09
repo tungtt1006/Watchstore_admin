@@ -36,12 +36,12 @@
             <li class="header">LAOYOUT ADMIN</li>
 
             <li>
-                <a href="index.php?controller=home">
+                <a href="{{ url('admin/brand') }}">
                     <i class="fa fa-th"></i> <span>Brands</span>
                 </a>
             </li>
             <li>
-                <a href="index.php?controller=garage">
+                <a href="{{ url('admin/watch') }}">
                     <i class="fa fa-th"></i> <span>Watches</span>
                 </a>
             </li>

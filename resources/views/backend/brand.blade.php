@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="{{ asset('css/back-end/share_read.css') }}">
 <link rel="stylesheet" href="{{ asset('css/back-end/brands.css') }}">
 @extends('backend.layout')
 
@@ -10,7 +11,7 @@
 @section('content_main')
 <div class="row">
    <div class="col-md-8"></div>
-   <div class="col-md-4" style="padding-top:30px;">
+   <div class="col-md-4" style="padding-top:30px;padding-bottom: 30px;">
      <a class="btn_create" href="{{ url('admin/brand/create') }}">Create New Brand</a>
    </div>
 </div>

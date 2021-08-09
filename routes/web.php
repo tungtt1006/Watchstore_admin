@@ -27,5 +27,10 @@ Route::group(['as'=>'admin', "prefix"=>"admin","middleware" => "auth"], function
    Route::resource('brand', 'BrandController', ['only' => [
     'index', 'create', 'store', 'edit', 'update', 'destroy'
    ]]);
+   
+   //Watch -CRUD
+   Route::resource('watch', 'WatchController', ['only' => [
+    'index', 'create', 'store', 'edit', 'update', 'destroy'
+   ]]);
 });
 

@@ -43,9 +43,15 @@ class BrandController extends Controller
         $newbrand = new Brand;
         $newbrand->name = $request->brand;
         $newbrand->parent_id = $request->parent_id;
-        $newbrand->sex = $request->sex;
+        if($request->parent_id == 0) 
+        {
+          $newbrand->sex = 2;
+        } else {
+          $newbrand->sex = $request->sex;
+        } 
         $newbrand->display = isset($request->display) ? $request->display : 0;
-        if (!$request->hasFile('image')) {
+        if (!$request->hasFile('image')) 
+        {
           $newbrand->img_url = '';
         } else {
           $image = $request->file('image');

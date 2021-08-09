@@ -49,22 +49,30 @@
        <input type="radio" id="css" name="sex" value="2" {{ isset($brand->sex) && ($brand->sex == 2) ? 'checked' : '' }}>
        <label class="form-label">Other</label>
     </div>
-     @if ($errors->has('sex'))
-        <div class="components_errors">
-            <p style="color: #ff0f0f;">{{ $errors->first('sex') }}</p>
-        </div>
+    @if ($errors->has('sex'))
+      <div class="components_errors">
+          <p style="color: #ff0f0f;">{{ $errors->first('sex') }}</p>
+      </div>
     @endif
 
     <div class="components_create_update" >
-           <label class="form-label">Display:</label>&emsp;
-           <input type="checkbox" name="display" value="1" {{ isset($brand->display) && ($brand->display == 1) ? 'checked' : '' }}>
+      <label class="form-label">Display:</label>&emsp;
+      <input type="checkbox" name="display" value="1" {{ isset($brand->display) && ($brand->display == 1) ? 'checked' : '' }}>
     </div>
 
-    <div class="components_create_update" style="margin-top:20px;">
+    <div class="components_create_update">
       <label class="form-label">Logo Image</label>
       <input class="form-control" type="file" id="formFile" name="image" style="width:50%;">
     </div>
+
+    @if(isset($brand))
+      <div class="components_create_update">
+        <p>Created: &emsp;{{ $brand->created_at }}</p>
+        <p>Last update: &emsp;{{ $brand->updated_at }}</p>
+      </div>
+    @endif
     
     <button type="submit" class="btn btn_create_update" name="submit">{{ isset($brand) ? 'Update' : 'Create' }}</button>
+    <a href="{{ url('admin/brand') }}" class="btn btn_create_update" onclick="return window.confirm('Are you sure?');">Cancel</a>
 </form>
 @endsection
